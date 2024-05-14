@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.background-container {
+  width: 90%;
+  border-radius: 60px;
+  height: 160%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to bottom, #222831, rgba(var(--background-start-rgb), 0) 110%, rgba(var(--background-end-rgb), 0) 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+.background-containers {
+  width: 80%;
+  border-radius: 60px;
+  height: 80%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to bottom, #222831, rgba(var(--background-start-rgb), 0) 110%, rgba(var(--background-end-rgb), 0) 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.car-container {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: -170px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* animation: left-move 5s ease-in-out infinite; */
+}
+.car-containers {
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 110px;
+  width: 110%;
+  height: 100%;
+  z-index: 1;
+  /* animation: left-move 5s ease-in-out infinite; */
+}
+
+.car-image {
+  width: 108%;
+  height: 100%;
+  background-image: url("/home_car.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+}
+input[type="datetime-local"]::placeholder {
+  content: "Month Day, Year";
+    color: gray;
+    font-style: italic;
+}
+
