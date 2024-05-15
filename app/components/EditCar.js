@@ -43,7 +43,7 @@ const EditCar = ({ data, setShowEditForm, token }) => {
     // Kirim data yang diperbarui ke server
     axios
       .put(
-        `http://127.0.0.1:8000/car/${formData.carID}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/car/${formData.carID}`,
         formDataToSend,
         {
           headers: {

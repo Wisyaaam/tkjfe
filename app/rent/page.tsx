@@ -36,7 +36,7 @@ function Rent() {
         useEffect(() => {
             (async () => {
                 try {
-                    const response = await axios.get(`http://127.0.0.1:8000/car/${carID}`, {
+                    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/car/${carID}`, {
                         headers: {
                             Authorization: `Bearer ${token}`
                         },
@@ -92,7 +92,7 @@ function Rent() {
     const handleSewa = () => {
         if(date && date1){
             try {
-                axios.post('http://127.0.0.1:8000/booking', {
+                axios.post(`${process.env.NEXT_PUBLIC_API_URL}/booking`, {
                     "car_id": carID,
                     "date": [
                         {
@@ -153,7 +153,7 @@ function Rent() {
                                         {error ? <Error error="Kesalahan pengisian tanggal!" error1="Tanggal kembali invalid" error2="silahkan isi kembali." /> : <></>}
 
                                         <div className="flex ml-[200px] bg-white border border-gray-400 shadow-md rounded-sm p-1 w-[1100px] h-[500px] overflow-hidden">
-                                            <img src={`http://127.0.0.1:8000/${car.image}`} className="w-[538px] h-[250px] object-cover rounded-lg mt-8 ml-20" alt="car" />
+                                            <img src={`${process.env.NEXT_PUBLIC_API_URL}/${car.image}`} className="w-[538px] h-[250px] object-cover rounded-lg mt-8 ml-20" alt="car" />
                                             <div className="mt-[70px] ml-[80px]">
                                                 <div className=" font-bold text-[20px]">{car.name}</div>
                                                 <div className="flex mt-5">

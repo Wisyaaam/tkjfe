@@ -21,7 +21,7 @@ export default function home() {
         const fetchUser = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get('http://127.0.0.1:8000/user/bylogin', {
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/bylogin`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 role = response.data.data[0].role;
@@ -48,7 +48,7 @@ export default function home() {
         const fetchCars = async () => {
             setIsLoading(true);
             try {
-                const url = car ? `http://127.0.0.1:8000/car/${search}` : 'http://127.0.0.1:8000/car';
+                const url = car ? `${process.env.NEXT_PUBLIC_API_URL}/car/${search}` : `${process.env.NEXT_PUBLIC_API_URL}/car`;
                 const response = await axios.get(url, {
                     headers: { Authorization: `Bearer ${token}` },
                 });

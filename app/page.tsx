@@ -20,7 +20,7 @@ export default function LandingHome() {
       const fetchUser = async () => {
         setLoadin(true)
         try {
-          const response = await axios.get('http://127.0.0.1:8000/user/bylogin', {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/bylogin`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           role = response.data.data[0].role;

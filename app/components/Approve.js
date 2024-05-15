@@ -8,7 +8,7 @@ const Approve = ({ setShowApprove, token, ID }) => {
     console.log("ID NYA : ", ID)
     axios
       .put(
-        `http://127.0.0.1:8000/booking/verify`,
+        `${process.env.NEXT_PUBLIC_API_URL}/booking/verify`,
         {
           
             "bookingID" : ID

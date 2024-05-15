@@ -24,7 +24,7 @@ const EditForm = ({ data, setShowEditForm, token }) => {
     // Kirim data yang diperbarui ke server
     axios
       .put(
-        `http://127.0.0.1:8000/user/edit/${formData.userID}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/user/edit/${formData.userID}`,
         {
           username: formData.username,
           email: formData.email,

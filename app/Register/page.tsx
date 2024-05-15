@@ -19,7 +19,7 @@ export default function register() {
     e.preventDefault();
     try {
       // Panggil API untuk login
-      const response = await axios.post('http://127.0.0.1:8000/user/signup', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/signup`, {
         username,
         email,
         password,

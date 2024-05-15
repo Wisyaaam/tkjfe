@@ -18,7 +18,7 @@ const TableMobil = ({ carData }) => {
   const handleDelete = (carID) => {
     // Panggil API untuk menghapus data dengan ID yang diberikan
     axios
-      .delete(`http://127.0.0.1:8000/user/${carID}`, {
+      .delete(`${process.env.NEXT_PUBLIC_API_URL}/user/${carID}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

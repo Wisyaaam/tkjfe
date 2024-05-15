@@ -20,7 +20,7 @@ export default function login() {
     try {
       // Panggil API untuk login
       setIsLoading(true);
-      const response = await axios.post('http://127.0.0.1:8000/auth', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth`, {
         email,
         password
       });

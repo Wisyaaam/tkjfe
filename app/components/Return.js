@@ -27,7 +27,7 @@ const Return = ({ setShowReturn, token, ID}) => {
     // Kirim data yang diperbarui ke server
     axios
       .put(
-          `http://127.0.0.1:8000/booking`,
+          `${process.env.NEXT_PUBLIC_API_URL}/booking`,
           {
             "bookingID" : ID,
             "return_date" : formData.return_date

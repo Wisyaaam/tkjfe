@@ -45,7 +45,7 @@ export default function Booking() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/booking/historyUser`, {
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/booking/historyUser`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },

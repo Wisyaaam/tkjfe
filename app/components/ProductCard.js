@@ -14,7 +14,7 @@ const ProductCard = ({ image, name, price, model, am, color, carID }) => {
   return (
     <div className="mt-[40px] ml-[60px] bg-white border border-gray-300 shadow-md rounded-sm p-1 w-[400px] h-[500px] md-20 overflow-hidden">
       <img
-        src={`http://127.0.0.1:8000/${image}`}
+        src={`${process.env.NEXT_PUBLIC_API_URL}/${image}`}
         alt={name}
         className="w-full h-[200px] object-cover rounded-lg mt-10"
       />

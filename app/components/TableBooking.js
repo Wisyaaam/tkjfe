@@ -24,7 +24,7 @@ const TableBooking = ({ carData }) => {
     // Panggil API untuk menghapus data dengan ID yang diberikan
     axios
       .put(
-        `http://127.0.0.1:8000/booking/cancel`,
+        `${process.env.NEXT_PUBLIC_API_URL}/booking/cancel`,
         {
           
             "bookingID" : carID

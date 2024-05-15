@@ -19,7 +19,7 @@ export default function Account() {
     useEffect(() => {
         // const getUser = async () => {
         //     try {
-        //         const response = await axios.get('http://127.0.0.1:8000/user/bylogin', {
+        //         const response = await axios.get('${process.env.NEXT_PUBLIC_API_URL}/user/bylogin', {
         //             headers: {
         //                 Authorization: `Bearer ${token}`,
         //             },
@@ -35,7 +35,7 @@ export default function Account() {
         // getUser
         const getCar = async () => {
             try {
-                const user = await axios.get('http://127.0.0.1:8000/user/bylogin', {
+                const user = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/bylogin`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -53,7 +53,7 @@ export default function Account() {
     }, []);
 
     const handleSubmit = () => {
-        axios.put('http://127.0.0.1:8000/user/edituser', {
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/edituser`, {
             username: usernameChange ? usernameChange : username,
             number: phoneChange ? phoneChange : phone,
             email: emailChange ? emailChange : email

@@ -21,12 +21,12 @@ export default function adminHome() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/car/`, {
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/car/`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },
                 });
-                const responses = await axios.get(`http://127.0.0.1:8000/user/`, {
+                const responses = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },
